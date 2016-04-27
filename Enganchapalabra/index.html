@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html> 
+	<head> 
+		<meta charset="UTF-8" />
+		<title>Engancha la palabra</title>
+			<script type="text/javascript" src="js/phaser.min.js"></script>
+			<script type="text/javascript" src="js/boot.js"></script>
+			<script type="text/javascript" src="js/preload.js"></script>
+			<script type="text/javascript" src="js/menuprincipal.js"></script>
+			<script type="text/javascript" src="js/juego.js"></script>
+			<!--<script type="text/javascript" src="js/gameover.js"></script>-->
+	    	<style type="text/css">
+	     	   body {
+	      	      margin: 0;
+	      	  	}
+	    	</style>
+	    	<script type="text/javascript">
+				(function() {
+					//Creamos un nuevo juego que ocupará 800x600px
+					juegoph = new Phaser.Game(800, 600, Phaser.AUTO);
+					
+					// Añadimos los diferentes estados de nuestro juego
+					juegoph.state.add("boot", boot);
+					juegoph.state.add("preload", preload);
+					juegoph.state.add("menuprincipal", menuprincipal);
+					juegoph.state.add("juego", juego);
+					//juego.state.add("gameOver", gameOver);
+
+					//Iniciamos el estado "boot"
+					juegoph.state.start("boot");
+				})();
+	    	</script>
+	</head>
+	<body>
+
+	</body>
+</html>
